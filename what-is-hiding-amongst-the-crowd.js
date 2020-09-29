@@ -13,12 +13,16 @@ Code below:
 
 */
 
+let initialString = 'WEELKJSaKDLFJSLDFJSLpLDKFJSLDKFJpSDDFKJDKFlLDKFJSDLKFeFLDKSFD';
+
 function detectWord(str) {
     let newString = ''; 
     for (i = 0; i < str.length; i++) {
         if(((str.charAt(i)).toLowerCase()) === str.charAt(i)) {
-            newString = ((str.charAt(i)).toString())
+            newString = newString + (str.charAt(i));
         }
     }
     return newString; 
 }
+
+detectWord(initialString);
