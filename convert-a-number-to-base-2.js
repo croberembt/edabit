@@ -32,10 +32,22 @@ Code below:
 */
 
 function binary(decimal) {
-    if (decimal === 0) {
-        return '0';
-    } else if (decimal > 0 && decimal < 1024) { 
-        binaryString = ???;
-        return binaryString;
+    let conversion = ''; 
+    if (decimal == 0) {
+        conversion = '0'; 
     }
+    while (decimal > 0 && decimal < 1024) {
+        conversion += decimal % 2; 
+        decimal = Math.floor(decimal / 2); 
+    }
+    return conversion.split('').reverse().join(''); 
 }
+
+binary(10);
+binary(15);
+binary(40);
+binary(43);
+binary(100);
+binary(1);
+binary(0);
+binary(1000); 
