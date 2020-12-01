@@ -29,22 +29,56 @@ let test4 = '15>4';
 
 function isTrue(relation) {
     let separate = []; 
-    let operator = ''; 
+    let num1 = 0;
+    let num2 = 0;
+    let newArray = []; 
+    let a = 0;
+    let b = 0; 
 	if (relation.includes('=')) { 
         separate = relation.split('='); 
-        operator = '='; 
+        num1 = parseInt(separate[0]);
+        num2 = parseInt(separate[1]); 
+        newArray = [num1, num2]; 
     } else if (relation.includes('<')) {
         separate = relation.split('<'); 
-        operator = '<';
+        num1 = parseInt(separate[0]);
+        num2 = parseInt(separate[1]); 
+        newArray = [num1, num2]; 
     } else if (relation.includes('>')) {
         separate = relation.split('>'); 
-        operator = '>'; 
+        num1 = parseInt(separate[0]);
+        num2 = parseInt(separate[1]); 
+        newArray = [num1, num2]; 
     } else {
         return 'This is not a valid comparison. Please try again.'; 
     }
-    let num1 = parseInt(separate[0]);
-    let num2 = parseInt(separate[1]); 
-    return [num1, num2]; 
+    if (relation.includes('=')) { 
+        a = newArray[0];
+        b = newArray[1]; 
+        if ((a = b) === true) {
+            return true;
+        } else {
+            return false; 
+        }
+    } else if (relation.includes('<')) {
+        a = newArray[0];
+        b = newArray[1]; 
+        if ((a < b) === true) {
+            return true;
+        } else {
+            return false; 
+        }
+    } else if (relation.includes('>')) {
+        a = newArray[0];
+        b = newArray[1]; 
+        if ((a > b) === true) {
+            return true;
+        } else {
+            return false; 
+        }
+    } else {
+        return 'This is not a valid comparison. Please try again.'; 
+    }
 }
 
 isTrue(test1);
@@ -52,6 +86,6 @@ isTrue(test2);
 isTrue(test3);
 isTrue(test4);
 
-// my notes: I realized my code above was working towards a solution to be able to compare the numbers, but not to evaluate
-// whether the original comparison string was true or false. I will have to come back at this with the correct angle. 
-// this may be a very long function, but I think following the logical long route will help me understand different javascript methods
+// While getting closer, I have not solved this. I could not find the original question in Edabit (may have been removed), so I 
+// have posted to stack overflow for help. I hope to learn a lot from this problem. The initial question suggested using eval(), 
+// but it is a high security risk, so I want to learn how to solve this without eval(). 
