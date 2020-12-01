@@ -39,42 +39,36 @@ function isTrue(relation) {
         num1 = parseInt(separate[0]);
         num2 = parseInt(separate[1]); 
         newArray = [num1, num2]; 
+        a = newArray[0];
+        b = newArray[1]; 
+        if (a === b) {
+            return true; 
+        } else {
+            return false;
+        }
     } else if (relation.includes('<')) {
         separate = relation.split('<'); 
         num1 = parseInt(separate[0]);
         num2 = parseInt(separate[1]); 
         newArray = [num1, num2]; 
+        a = newArray[0];
+        b = newArray[1]; 
+        if (a < b) {
+            return true; 
+        } else {
+            return false;
+        }
     } else if (relation.includes('>')) {
         separate = relation.split('>'); 
         num1 = parseInt(separate[0]);
         num2 = parseInt(separate[1]); 
         newArray = [num1, num2]; 
-    } else {
-        return 'This is not a valid comparison. Please try again.'; 
-    }
-    if (relation.includes('=')) { 
         a = newArray[0];
         b = newArray[1]; 
-        if ((a = b) === true) {
-            return true;
+        if (a > b) {
+            return true; 
         } else {
-            return false; 
-        }
-    } else if (relation.includes('<')) {
-        a = newArray[0];
-        b = newArray[1]; 
-        if ((a < b) === true) {
-            return true;
-        } else {
-            return false; 
-        }
-    } else if (relation.includes('>')) {
-        a = newArray[0];
-        b = newArray[1]; 
-        if ((a > b) === true) {
-            return true;
-        } else {
-            return false; 
+            return false;
         }
     } else {
         return 'This is not a valid comparison. Please try again.'; 
