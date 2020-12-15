@@ -79,7 +79,3 @@ isTrue(test1);
 isTrue(test2);
 isTrue(test3);
 isTrue(test4);
-
-// While getting closer, I have not solved this. I could not find the original question in Edabit (may have been removed), so I 
-// have posted to stack overflow for help. I hope to learn a lot from this problem. The initial question suggested using eval(), 
-// but it is a high security risk, so I want to learn how to solve this without eval(). 
