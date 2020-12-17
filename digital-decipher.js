@@ -70,21 +70,27 @@ let key3 = 100;
 
 function digitalDecipher(eMessage, key) {
     let characterArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; 
-    let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]; 
-    let newNumberArray = []; 
     let newCharacterArray = []; 
     let answer = ''; 
+    let keyArray = Array.from(String(key), Number); 
+    let keyNumber = 0;
     for (i = 0; i < eMessage.length; i++) {
-        newNumberArray.push((eMessage[i] - 1)); // the one will be replaced by figuring out how to cycle through each digit of the key, repeating until the end of the input array
+        for (j = 0; j < keyArray.length; j++) {
+            keyNumber = keyArray[j]; // key number is correct and is iterating correctly except iterating through all numbers each time, thus 5x4 for test 1
+            console.log(keyNumber); 
+            //newCharacterArray.push(characterArray[((eMessage[i] - keyNumber) - 1)]);
+            //console.log(newCharacterArray); 
+        }
     }
-    //for (j = 0; j < newNumberArray.length; j++) {
-        //newCharacterArray.push(characterArray[i]);
-        //console.log(newCharacterArray); 
-    //}
-    answer = newCharacterArray.join(''); 
+    //answer = newCharacterArray.join(''); 
     return answer; 
 }
 
 digitalDecipher(arr1, key1);
 digitalDecipher(arr2, key2);
 digitalDecipher(arr3, key3);
+
+// 0 represents each item of the keyArray from index 0 though to the end of length of 
+// array starting back again until through the full decipheredNumberArray
+// the 0 will be replaced by figuring out how to cycle through each digit of the 
+// key, repeating until the end of the input array 
