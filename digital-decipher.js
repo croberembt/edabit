@@ -73,16 +73,10 @@ function digitalDecipher(eMessage, key) {
     let newCharacterArray = []; 
     let answer = ''; 
     let keyArray = Array.from(String(key), Number); 
-    let keyNumber = 0;
     for (i = 0; i < eMessage.length; i++) {
-        for (j = 0; j < keyArray.length; j++) {
-            keyNumber = keyArray[j]; // key number is correct and is iterating correctly except iterating through all numbers each time, thus 5x4 for test 1
-            console.log(keyNumber); 
-            //newCharacterArray.push(characterArray[((eMessage[i] - keyNumber) - 1)]);
-            //console.log(newCharacterArray); 
-        }
+        newCharacterArray.push(characterArray[((eMessage[i] - keyArray[i]) - 1)]);
     }
-    //answer = newCharacterArray.join(''); 
+    answer = newCharacterArray.join(''); 
     return answer; 
 }
 
@@ -90,7 +84,13 @@ digitalDecipher(arr1, key1);
 digitalDecipher(arr2, key2);
 digitalDecipher(arr3, key3);
 
+
 // 0 represents each item of the keyArray from index 0 though to the end of length of 
 // array starting back again until through the full decipheredNumberArray
 // the 0 will be replaced by figuring out how to cycle through each digit of the 
 // key, repeating until the end of the input array 
+
+// until you reach the end of the length of the eMessage array, update the keyNumber to index 0 through end of the length and then update it back at 0 
+
+// first iteration, you want to update the keyNumber until the end of the KeyArray and then start back at 0 - you only need to do this one time - one loop 
+// how do you do this with just one loop 
