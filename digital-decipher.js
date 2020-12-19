@@ -15,7 +15,7 @@ Assign a unique number to each letter of the alphabet.
 There are some variations on the rules of encipherment. One version of the cipher rules are outlined below:
 
 eMessage = [20, 12, 18, 30, 21] 
-key = 1939
+key = 1993
 
 digitalDecipher(eMessage, key) ➞ "scout"
 
@@ -64,25 +64,36 @@ Code below:
 let arr1 = [20, 12, 18, 30, 21];
 let arr2 = [14, 30, 11, 1, 20, 17, 18, 18];
 let arr3 = [6, 4, 1, 3, 9, 20];
+let arr4 = [4, 25, 14, 13]
 let key1 = 1939;
 let key2 = 1990;
 let key3 = 100;
+let key4 = 1254714; 
+
 
 function digitalDecipher(eMessage, key) {
     let characterArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; 
     let newCharacterArray = []; 
     let answer = ''; 
     let keyArray = Array.from(String(key), Number); 
+    let j = 0; 
     for (i = 0; i < eMessage.length; i++) {
-        newCharacterArray.push(characterArray[((eMessage[i] - keyArray[i]) - 1)]);
+        newCharacterArray.push(characterArray[((eMessage[i] - keyArray[j]) - 1)]);
+        j++
+        if (j >= keyArray.length) {
+            j = 0; 
+        }
     }
     answer = newCharacterArray.join(''); 
     return answer; 
 }
 
+
+
 digitalDecipher(arr1, key1);
 digitalDecipher(arr2, key2);
 digitalDecipher(arr3, key3);
+digitalDecipher(arr4, key4); 
 
 
 // 0 represents each item of the keyArray from index 0 though to the end of length of 
