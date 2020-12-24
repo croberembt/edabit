@@ -77,10 +77,10 @@ function digitalDecipher(eMessage, key) {
     let answer = ''; 
     let keyArray = Array.from(String(key), Number); 
     let j = 0; 
-    for (i = 0; i < eMessage.length; i++) {
+    for (i = 0; i < eMessage.length; i++) { // this iterates once through the eMessage input array
         newCharacterArray.push(characterArray[((eMessage[i] - keyArray[j]) - 1)]);
-        j++
-        if (j >= keyArray.length) {
+        j++ // this increments the index of the keyArray
+        if (j >= keyArray.length) { // this restarts the keyArray back at 0 once the index is at the end of the keyArray
             j = 0; 
         }
     }
