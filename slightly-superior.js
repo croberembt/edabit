@@ -28,15 +28,6 @@ Code below:
 
 */
 
-let test1 = ["a", "d", "c"]; 
-let test2 = ["a", "b", "c"];
-let test3 = ["zebra", "ostrich", "whale"]; 
-let test4 = ["ant", "ostrich", "whale"]; 
-let test5 = [1, 2, 3, 4]; 
-let test6 = [1, 2, 4, 4]; 
-let test7 = [true, 10, "zebra"]; 
-let test8 = [true, 10, "zebra"]; 
-
 function isFirstSuperior(arr1, arr2) {
 	for (i = 0; i < arr1.length; i++) {
         if (arr1[i] > arr2[i]) {
@@ -45,8 +36,3 @@ function isFirstSuperior(arr1, arr2) {
     }
     return false; 
 }
-
-isFirstSuperior(test1, test2);
-isFirstSuperior(test3, test4);
-isFirstSuperior(test5, test6);
-isFirstSuperior(test7, test8);
